@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container">
+        {% for  New in context.News%}
+        <div class="item mb-5">
+            <div class="media">
+                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ New.images.all.0.image.url }}" alt="image for {{New.tittle}}">
+                <div class="media-body">
+                    <h3 class="title mb-1"><a href="{% url 'blog_detail' id=New.id %}">{{New.tittle}}</a></h3>
+                    <div class="meta mb-1"><span class="date">{{New.created_at}}</span></div>
+                    <div class="intro">{{New.description}}</div>
+                    <a class="more-link" href="/blog">Read more &rarr;</a>
+                </div><!--//media-body-->
+            </div><!--//media-->
+        </div><!--//item-->
+        {% endfor %}
+        
+        <div class="pagination">
+            <span class="step-links">
+                {% if context.News.has_previous %}
+                    <a href="?page=1">&laquo; First</a>
+                    <a href="?page={{ context.News.previous_page_number }}">Previous</a>
+                {% endif %}
+        
+                <span class="current-page">
+                    Page {{ context.News.number }} of {{ context.News.paginator.num_pages }}.
+                </span>
+        
+                {% if context.News.has_next %}
+                    <a href="?page={{ context.News.next_page_number }}">Next</a>
+                    <a href="?page={{ context.News.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </span>
+          </div>
+        
+    </div>
+</section>
+{% endblock %}

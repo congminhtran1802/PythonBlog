@@ -1,0 +1,20 @@
+.user-div{
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+.user-avatar{
+    width: 30px;
+    height: 30px;
+}
+.menu-div{
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+.user-content{
+    margin-top: 10px;
+    margin-left: 10px;
+}

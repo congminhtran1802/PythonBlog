@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} About {% endblock %}
+{% block content %}
+<article class="about-section py-5">
+    <div class="container">
+        <h2 class="title mb-3">Giới thiệu bản thân</h2>
+        
+        <p>Xin chào mọi người tôi là Trần Công Minh. Mọi người hay gọi tôi là Minh Đại Đế. Sở thích của tôi là đọc truyện, xem phim, chơi game, cờ vua. Các bạn có thể liên hệ với tôi qua Facebook cá nhân của tôi ở bên menu.</p>
+        <figure><img class="img-fluid" src="{% static 'images/jhin.jpg' %}" alt="image"></figure>
+        <h5 class="mt-5">Giới thiệu blog</h5>
+        <p>Blog của tôi là nơi bàn luận về các tựa game hay trên thế giới, cập nhật các tin tức dưới góc nhìn một người chơi game. Rất mong các bạn có thể tận hưởng và trải nghiệm nó một cách tốt nhất</p>
+        <figure><img class="img-fluid" src="{% static 'images/game.png' %}" alt="image"></figure>
+        <h5 class="mt-5">Kỹ năng và kinh nghiệm</h5>
+        <p>Về kỹ năng của tôi thì tôi khá tốt trong toán logic và các thuật toán. Tôi thành thạo một vài loại ngôn ngữ lập trình như: Python, Flutter, Java</p>
+        <figure><img class="img-fluid" src="{% static 'images/skill.png' %}" alt="image"></figure>
+    </div>
+</article><!--//about-section-->
+
+{% endblock %}
